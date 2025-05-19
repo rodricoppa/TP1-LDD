@@ -1,0 +1,62 @@
+Análisis exploratorio:
+
+ ¿Hay suficientes escuelas según la cantidad de gente? ¿Hay relación entre cuántas escuelas hay y la tasa de repitencia?
+
+*1) Qué queremos ver?*
+Queremos ver si en los municipios de la provincia de Buenos Aires hay una relación entre cuántas personas viven y cuántas escuelas hay. O sea, si en lugares con más gente hay también más escuelas, o si está mal repartido. Después de ver cómo están distribuidas las escuelas, según la cantidad de gente, también queremos ver si eso tiene algo que ver con los resultados educativos. En este caso nos enfocamos en una medida bastante concreta: la tasa de repitencia de los alumnos.
+Nos preguntamos si en los municipios donde hay mucha gente por escuela hay también más chicos que repiten. La idea es pensar si la falta de infraestructura puede afectar el rendimiento o la permanencia de los estudiantes.
+
+*2) ¿Cuál es la hipótesis?*
+En teoría, donde hay más personas debería haber más escuelas. Pero capaz en algunos lugares hay mucha gente y pocas escuelas (lo que está mal), y en otros hay poca gente pero muchas escuelas (lo que puede estar bien o ser un gasto de más).
+
+*3) ¿Qué datos usamos?*
+Usamos tres archivos:
+
+* Uno con las escuelas y dónde están.
+* Otro con la cantidad de personas por municipio (estimado para 2024).
+* Y luego, sumamos otro con la tasa de repitencia en escuelas por municipio. Esa tasa nos dice que porcentaje de los estudiantes repite de grado/año.
+
+*4) Cómo preparamos los datos*
+
+Nos quedamos solo con lo importante: el nombre del municipio, el ID, el ID del establecimiento y la población.
+* Sacamos filas con datos faltantes.
+* Contamos cuántas escuelas hay en cada municipio.
+* Unimos todo para tener en un mismo lugar la población y la cantidad de escuelas de cada municipio.
+
+*5) Qué calculamos:* Calculamos habitantes por escuela (aproximadamente)
+
+Creamos una cuenta
+habitantes_por_escuela = población total / cantidad de escuelas
+
+Esto nos dice cuántas personas le "tocan" a cada escuela.
+Con eso sacamos algunos números:
+
+*Media:* 547,76 habitantes por escuela
+
+*Mediana:* 406,72 habitantes por escuela
+
+*Desvío estándar:* 354,63 (muestra cuánta diferencia hay entre los municipios)
+
+Luego comparamos esa nueva variable con la tasa de repitencia.
+Calculamos algunas estadísticas básicas de repitencia:
+
+*Media:* 6,46%
+
+*Mediana:* 6,14%
+
+*Desvío estándar:* 2,48% (esto nos dice que hay cierta variabilidad entre municipios)
+
+*6) Qué vimos en el gráfico*
+Hicimos un histograma que muestra cuántos municipios hay según la cantidad de habitantes por escuela.
+La mayoría de los municipios tienen entre 250 y 750 personas por escuela.
+Pero hay unos pocos municipios que pasan los 1000 habitantes por escuela, lo que es preocupante.
+Esto nos dice que hay desigualdad: algunos municipios tienen muchas escuelas para su gente, y otros muy pocas.
+Luego hicimos dos gráficos de dispersión, uno que muestra la relación entre repitencia en primaria y en secundaria y otro que compara habitantes por escuela con la repitencia en secundaria. Cuando hicimos la comparación entre habitantes por escuela y repitencia, no encontramos una relación directa ni fuerte. O sea, no pasa que cuanto más saturado está el sistema (más habitantes por escuela), más repite la gente. En realidad, hay municipios con muchas personas por escuela que tienen repitencia baja, y otros con pocas personas por escuela que igual tienen repitencia alta.
+
+*Conclusión general de todo el análisis*
+
+Sobre la cantidad de escuelas: Hay desigualdad en cómo están repartidas las escuelas según la cantidad de personas. Algunos municipios están bastante bien (con 400 o 500 personas por escuela), pero hay otros con más de 1000 personas por escuela. Eso puede ser una señal de que falta infraestructura, que puede traer problemas como aulas superpobladas, falta de vacantes o desgaste docente.
+
+Sobre la repitencia: Aunque esperábamos que en los municipios más saturados hubiera más repitencia, los datos no mostraron una relación clara. Esto quiere decir que tener más o menos escuelas no garantiza mejores resultados educativos.
+
+¿Qué nos deja esto para pensar? Que para mejorar la educación no alcanza con construir escuelas: posiblemente también hay que trabajar en el acompañamiento, el contexto social, la calidad docente y otras políticas educativas. Pero eso no significa que la infraestructura no sea importante: los municipios con más de 1000 habitantes por escuela sí deberían ser una prioridad, aunque la repitencia no sea alta ahora. Es posible que esa presión se note en otras cosas, como la calidad de las clases o el acceso real a vacantes.
